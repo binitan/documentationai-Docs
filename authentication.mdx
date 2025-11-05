@@ -1,0 +1,56 @@
+---
+title: Authentication
+---
+
+## Authentication Overview
+
+Authentication is crucial for securing your application's data. Our platform uses a token-based authentication system to ensure user data is protected.
+
+<Callout kind="alert">
+  Keep your API key confidential to prevent unauthorized access.
+</Callout>
+
+## Obtaining Your API Key
+
+1. **Sign Up**: Create an account on our platform.
+2. **Generate API Key**: Navigate to your account settings to generate a new API key.
+
+```bash
+# Example of how to set your API key
+export API_KEY='your-api-key'
+```
+
+## Implementing Authentication
+
+Use the following steps to authenticate requests:
+
+<Steps>
+  <Step title="Include API Key" icon="key">
+    Add your API key to the request header.
+  </Step>
+  <Step title="Validate Response" icon="check-circle">
+    Ensure the response status is 200 for successful requests.
+  </Step>
+</Steps>
+
+## Example Request
+
+<Request tabs="cURL,Python">
+  ```bash
+  curl -H "Authorization: Bearer your-api-key" https://api.example.com/data
+  ```
+  ```python
+  import requests
+  headers = {'Authorization': 'Bearer your-api-key'}
+  response = requests.get('https://api.example.com/data', headers=headers)
+  ```
+</Request>
+
+## Troubleshooting
+
+<Expandable title="Common Issues" default-open="false">
+  <ul>
+    <li>Invalid API Key: Ensure your API key is correct.</li>
+    <li>Network Errors: Check your internet connection.</li>
+  </ul>
+</Expandable>

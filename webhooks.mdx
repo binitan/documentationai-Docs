@@ -1,0 +1,51 @@
+---
+title: Webhooks
+---
+
+## Introduction to Webhooks
+
+Webhooks allow your application to receive real-time updates by sending HTTP POST requests to your defined endpoints. They're perfect for integrating with external services.
+
+<Callout kind="info">
+  Ensure your server is prepared to handle incoming webhook requests.
+</Callout>
+
+## Setting Up Webhooks
+
+<Steps>
+  <Step title="Create Endpoint" icon="globe">
+    Set up an endpoint on your server to receive HTTP POST requests.
+  </Step>
+  <Step title="Configure Webhook" icon="settings">
+    Log into your dashboard and configure the webhook settings.
+  </Step>
+</Steps>
+
+## Example Payload
+
+<Response tabs="Sample Payload">
+  ```json
+  {
+    "event": "user_signup",
+    "data": {
+      "userId": "12345",
+      "email": "user@example.com"
+    }
+  }
+  ```
+</Response>
+
+## Security Best Practices
+
+- **Verify Signatures**: Ensure the webhook payload includes a signature you can verify.
+- **Use HTTPS**: Always use HTTPS to secure data in transit.
+
+## Testing Webhooks
+
+Use tools like ngrok to expose your local server and test webhooks.
+
+<CodeGroup tabs="ngrok">
+  ```bash
+  ngrok http 80
+  ```
+</CodeGroup>

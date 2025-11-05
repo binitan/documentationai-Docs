@@ -1,0 +1,70 @@
+---
+title: Configuration
+---
+
+## Configuration Overview
+
+Configuring your application properly ensures it runs smoothly and efficiently. This section covers the essential configuration steps.
+
+<Callout kind="success">
+  Double-check your configuration settings to prevent errors.
+</Callout>
+
+## Setting Environment Variables
+
+<CodeGroup tabs="Bash,Windows">
+  ```bash
+  export DB_HOST='localhost'
+  export DB_USER='admin'
+  ```
+  ```cmd
+  set DB_HOST=localhost
+  set DB_USER=admin
+  ```
+</CodeGroup>
+
+## Database Connection
+
+Ensure your database connection is configured with the correct credentials.
+
+```json
+{
+  "host": "localhost",
+  "port": 5432,
+  "user": "admin",
+  "password": "password"
+}
+```
+
+## Logging Configuration
+
+Adjust the logging settings to capture essential information without overwhelming your logs.
+
+<Expandable title="Logging Levels" default-open="false">
+  <ul>
+    <li>ERROR: Critical issues only</li>
+    <li>WARN: Important warnings</li>
+    <li>INFO: General information</li>
+  </ul>
+</Expandable>
+
+## Testing Your Configuration
+
+<Tabs>
+  <Tab title="Linux" icon="terminal">
+    ```bash
+    ./run-tests.sh
+    ```
+  </Tab>
+  <Tab title="Windows" icon="monitor">
+    ```cmd
+    run-tests.bat
+    ```
+  </Tab>
+</Tabs>
+
+## Troubleshooting
+
+<Callout kind="danger">
+  If you encounter errors, verify all paths and environment variables are correct.
+</Callout>
